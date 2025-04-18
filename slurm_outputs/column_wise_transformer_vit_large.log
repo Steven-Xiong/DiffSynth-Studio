@@ -1,0 +1,7 @@
+
+CondaError: Run 'conda init' before 'conda activate'
+
+srun: error: CPU binding outside of job step allocation, allocated CPUs are: 0x000000AAAA00000000000000000000AAAA00000000000000.
+srun: error: Task launch for StepId=29113.0 failed on node rails05: Unable to satisfy cpu bind request
+srun: error: Application launch failed: Unable to satisfy cpu bind request
+srun: Job step aborted

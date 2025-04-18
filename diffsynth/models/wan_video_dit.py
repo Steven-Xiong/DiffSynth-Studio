@@ -334,6 +334,7 @@ class WanModel(torch.nn.Module):
         context = self.text_embedding(context)
         
         if self.has_image_input:
+            # import pdb; pdb.set_trace()
             x = torch.cat([x, y], dim=1)  # (b, c_x + c_y, f, h, w)
             clip_embdding = self.img_emb(clip_feature)
             context = torch.cat([clip_embdding, context], dim=1)

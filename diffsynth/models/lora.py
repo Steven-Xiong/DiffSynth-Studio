@@ -366,7 +366,11 @@ class FluxLoRAConverter:
                 state_dict_[name] = param
         return state_dict_
 
+<<<<<<< Updated upstream
 
+=======
+### 4.3 new  ###
+>>>>>>> Stashed changes
 class WanLoRAConverter:
     def __init__(self):
         pass

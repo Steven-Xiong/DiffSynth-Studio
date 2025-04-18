@@ -252,6 +252,7 @@ class LightningModelForTrain(pl.LightningModule):
 
     def training_step(self, batch, batch_idx):
         # Data
+        # import pdb; pdb.set_trace()
         latents = batch["latents"].to(self.device)
         prompt_emb = batch["prompt_emb"]
         prompt_emb["context"] = prompt_emb["context"][0].to(self.device)
@@ -407,7 +408,7 @@ def parse_args():
     parser.add_argument(
         "--dataloader_num_workers",
         type=int,
-        default=1,
+        default=8,
         help="Number of subprocesses to use for data loading. 0 means that the data will be loaded in the main process.",
     )
     parser.add_argument(
@@ -514,7 +515,7 @@ def data_process(args):
     dataloader = torch.utils.data.DataLoader(
         dataset,
         shuffle=False,
-        batch_size=1,
+        batch_size=4,
         num_workers=args.dataloader_num_workers
     )
     model = LightningModelForDataProcess(
